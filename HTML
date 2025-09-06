@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduBoard – Student Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <nav class="sidebar" aria-label="Primary">
+            <div class="brand"><i class="fa-solid fa-graduation-cap"></i>
+                <div class="title">EduBoard</div>
+            </div>
+            <div class="side-links">
+                <a href="#" aria-current="page"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+                <a href="#subjects"><i class="fa-solid fa-book"></i> Subjects</a>
+                <a href="#attendance"><i class="fa-solid fa-calendar-check"></i> Attendance</a>
+                <a href="#profile"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="#settings"><i class="fa-solid fa-gear"></i> Settings</a>
+            </div>
+        </nav>
+
+        <!-- Topbar -->
+        <header class="topbar">
+            <div class="topbar-inner">
+                <div class="search"><input type="search" placeholder="Search courses, assignments…" /></div>
+                <div class="actions">
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                    <img class="avatar" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=240&auto=format&fit=crop" alt="Student avatar" />
+                    <span class="student-name">Alex Johnson</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main>
+            <section>
+                <header>
+                    <h2>Student Overview</h2>
+                </header>
+                <div class="grid overview">
+                    <article class="card">
+                        <h3>GPA</h3>
+                        <div class="stat">
+                            <div class="value">3.72</div><i class="fa-solid fa-chart-line"></i>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Attendance</h3>
+                        <div class="stat">
+                            <div class="value">92%</div><i class="fa-solid fa-user-check"></i>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Assignments Due</h3>
+                        <div class="stat">
+                            <div class="value">4</div><i class="fa-regular fa-clipboard"></i>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Total Credits</h3>
+                        <div class="stat">
+                            <div class="value">18</div><i class="fa-solid fa-layer-group"></i>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="progress">
+                <header>
+                    <h2>Subject Progress</h2>
+                </header>
+                <div class="card table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Instructor</th>
+                                <th>Completion</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Data Structures</strong></td>
+                                <td>Prof. K. Mehta</td>
+                                <td>
+                                    <div class="progress" style="--value:78">
+                                        <div class="bar"></div>
+                                    </div>
+                                </td>
+                                <td><span class="badge">On Track</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Algorithms</strong></td>
+                                <td>Dr. R. Shah</td>
+                                <td>
+                                    <div class="progress" style="--value:64">
+                                        <div class="bar"></div>
+                                    </div>
+                                </td>
+                                <td><span class="badge">Moderate</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>DBMS</strong></td>
+                                <td>Prof. S. Rao</td>
+                                <td>
+                                    <div class="progress" style="--value:52">
+                                        <div class="bar"></div>
+                                    </div>
+                                </td>
+                                <td><span class="badge">Catch Up</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Operating Systems</strong></td>
+                                <td>Dr. L. Nair</td>
+                                <td>
+                                    <div class="progress" style="--value:86">
+                                        <div class="bar"></div>
+                                    </div>
+                                </td>
+                                <td><span class="badge">On Track</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Computer Networks</strong></td>
+                                <td>Prof. V. Iyer</td>
+                                <td>
+                                    <div class="progress" style="--value:33">
+                                        <div class="bar"></div>
+                                    </div>
+                                </td>
+                                <td><span class="badge">Catch Up</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="deadlines">
+                <div class="list">
+                    <header>
+                        <h2>Upcoming Deadlines</h2>
+                    </header>
+                    <article class="deadline-item">
+                        <div class="date-badge"><span class="mon">Sep</span><span class="day">12</span></div>
+                        <div>
+                            <div class="title">Algorithms – Homework 3</div>
+                            <div class="meta">Submit on LMS • Weight 10%</div>
+                        </div><a class="cta badge" href="#">Submit</a>
+                    </article>
+                    <article class="deadline-item">
+                        <div class="date-badge"><span class="mon">Sep</span><span class="day">15</span></div>
+                        <div>
+                            <div class="title">DBMS – Project Proposal</div>
+                            <div class="meta">Team of 3 • Weight 20%</div>
+                        </div><a class="cta badge" href="#">Details</a>
+                    </article>
+                    <article class="deadline-item">
+                        <div class="date-badge"><span class="mon">Sep</span><span class="day">22</span></div>
+                        <div>
+                            <div class="title">Operating Systems – Midterm</div>
+                            <div class="meta">Hall B • 10:00 AM</div>
+                        </div><a class="cta badge" href="#">Add</a>
+                    </article>
+                </div>
+                <aside class="profile">
+                    <div class="card profile-card">
+                        <img class="avatar-lg" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=240&auto=format&fit=crop" alt="Profile photo" />
+                        <div>
+                            <div style="font-weight:800; font-size:20px;">Alex Johnson</div>
+                            <div>Computer Science Undergraduate</div>
+                        </div>
+                        <div class="grid-2">
+                            <div class="kv">
+                                <div class="k">Roll No</div>
+                                <div class="v">CS21B042</div>
+                            </div>
+                            <div class="kv">
+                                <div class="k">Email</div>
+                                <div class="v">alex.johnson@example.edu</div>
+                            </div>
+                            <div class="kv">
+                                <div class="k">College</div>
+                                <div class="v">NxtWave Institute of Technology</div>
+                            </div>
+                            <div class="kv">
+                                <div class="k">Department</div>
+                                <div class="v">Computer Science</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
