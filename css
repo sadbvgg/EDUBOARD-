@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f6f8fb;
+    color: #0f172a;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "sidebar header""sidebar main";
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background: #fff;
+    padding: 20px;
+}
+
+.sidebar .brand {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.side-links a {
+    display: block;
+    margin: 8px 0;
+    color: #334155;
+    text-decoration: none;
+}
+
+.side-links a[aria-current="page"] {
+    font-weight: bold;
+    color: #2563eb;
+}
+
+/* Topbar */
+.topbar {
+    grid-area: header;
+    background: #fff;
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search input {
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    width: 250px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+/* Main */
+main {
+    grid-area: main;
+    padding: 24px;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.overview {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.stat .value {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Table */
+.table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-wrap th,
+.table-wrap td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.progress {
+    --value: 0;
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress .bar {
+    width: calc(var(--value) * 1%);
+    height: 100%;
+    background: #2563eb;
+}
+
+.badge {
+    background: #e0e7ff;
+    color: #2563eb;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Deadlines */
+.deadline-item {
+    display: grid;
+    grid-template-columns: 72px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.date-badge {
+    background: #f1f5f9;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    font-weight: bold;
+}
+
+.profile-card {
+    text-align: center;
+    padding: 16px;
+}
+
+.avatar-lg {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.kv {
+    background: #f8fafc;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.k {
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.v {
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .overview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .app {
+        grid-template-columns: 220px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .app {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header""main";
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .overview {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .deadlines {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .overview {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar-inner {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .deadline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        text-align: left;
+    }
+
+    .date-badge {
+        width: 56px;
+        height: 56px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
